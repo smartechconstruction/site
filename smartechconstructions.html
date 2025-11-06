@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Tech Construction</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #001f3f; /* Navy blue */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        .logo img {
+            height: 50px;
+        }
+        .nav-links {
+            display: flex;
+        }
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        .nav-links a {
+            font-weight: bold;
+            color: #fff; /* White */
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #ddd; /* Grey */
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .home {
+            background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80'); /* Construction background */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .home .logo {
+            margin-bottom: 2rem;
+        }
+        .home h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .home p {
+            font-size: 1.5rem;
+        }
+        .about, .services, .projects, .contact {
+            background-color: #fff;
+            max-width: 1200px;
+            width: 100%;
+        }
+        .about h2, .services h2, .projects h2, .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #001f3f; /* Navy blue */
+        }
+        .about p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            text-align: center;
+        }
+        .services {
+            text-align: center;
+        }
+        .services ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .services li {
+            background-color: #f4f4f4;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .services li h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #001f3f;
+        }
+        .projects {
+             text-align: center;
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .project-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .contact {
+            text-align: center;
+        }
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+        .contact-details p {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .contact input, .contact textarea {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .contact button {
+            padding: 1rem;
+            background-color: #001f3f;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .contact button:hover {
+            background-color: #003366;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #001f3f;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+        }
+        footer p {
+            margin-bottom: 1rem;
+        }
+        footer a {
+            color: #ddd;
+            margin: 0 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            .nav-links {
+                margin-top: 1rem;
+            }
+            .nav-links li {
+                margin-left: 1rem;
+            }
+            .home h1 {
+                font-size: 2rem;
+            }
+            .home p {
+                font-size: 1.2rem;
+            }
+            section {
+                padding: 2rem 1rem;
+            }
+            .services ul {
+                grid-template-columns: 1fr;
+            }
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="C:\Users\ME\Desktop\logo.jpg" alt="Smart Tech Construction Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="home">
+        <div class="logo">
+            <img src="C:\Users\ME\Desktop\logo.jpg" alt="Smart Tech Construction Logo">
+        </div>
+        <h1>Smart Tech Construction</h1>
+        <p>Building Dreams, Crafting Futures</p>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>Smart Tech Construction is a leading company in the construction and interior design industry. We specialize in delivering innovative, high-quality projects that combine modern technology with timeless craftsmanship. Our mission is to create spaces that inspire and endure, ensuring client satisfaction through every phase of the project.</p>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Services</h2>
+        <ul>
+            <li>
+                <h3>Building Construction</h3>
+                <p>Comprehensive construction services for residential and commercial buildings, from foundation to finish.</p>
+            </li>
+            <li>
+                <h3>Interior Design</h3>
+                <p>Custom interior design solutions to transform spaces into functional and aesthetic masterpieces.</p>
+            </li>
+            <li>
+                <h3>Renovation</h3>
+                <p>Expert renovation services to update and modernize existing structures.</p>
+            </li>
+            <li>
+                <h3>Planning</h3>
+                <p>Detailed architectural planning and project management for seamless execution.</p>
+            </li>
+        </ul>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>Projects / Gallery</h2>
+        <div class="project-grid">
+            <img src="https://images.unsplash.com/photo-1503387837-b154d5074bd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Construction Project 1">
+            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Construction Project 2">
+            <img src="https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Construction Project 3">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Construction Project 4">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Construction Project 5">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Construction Project 6">
+        </div>
+    </section>
+<section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-details">
+            <p>Email:info@smarttechconstruction.com.</p>
+            <p>phone no. :+91 9797099636</p>
+            <p>Address:Chanpora, Srinagar. </p>
+            </div>
+        <form>
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Smart Tech Construction. All rights reserved.</p>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact Us</a>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-links a, footer a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+            
